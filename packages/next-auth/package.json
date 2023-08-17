@@ -1,6 +1,6 @@
 {
   "name": "next-auth",
-  "version": "4.24.0",
+  "version": "4.24.1",
   "description": "Authentication for Next.js",
   "homepage": "https://next-auth.js.org",
   "repository": "https://github.com/iocampo-j6w/next-auth-sesc.git",
