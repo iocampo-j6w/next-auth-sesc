@@ -457,6 +457,11 @@ export interface SessionOptions {
    */
   strategy: SessionStrategy
   /**
+   * This determines whether to expire the session cookie on browser close
+   * @default true
+   */
+  expireOnClose: boolean
+  /**
    * Relative time from now in seconds when to expire the session
    * @default 2592000 // 30 days
    */

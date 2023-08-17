@@ -20,7 +20,7 @@ export async function encode(params: JWTEncodeParams) {
   return await new EncryptJWT(token)
     .setProtectedHeader({ alg: "dir", enc: "A256GCM" })
     .setIssuedAt()
-    .setExpirationTime(now() + maxAge)
+    .setExpirationTime(now() + (maxAge || DEFAULT_MAX_AGE))
     .setJti(uuid())
     .encrypt(encryptionSecret)
 }
