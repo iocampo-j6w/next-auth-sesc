@@ -29,7 +29,7 @@ export default async function callback(params: {
     jwt,
     events,
     callbacks,
-    session: { strategy: sessionStrategy, maxAge: sessionMaxAge },
+    session: { strategy: sessionStrategy, maxAge: sessionMaxAge, expireOnClose },
     logger,
   } = options
 
@@ -405,7 +405,7 @@ export default async function callback(params: {
     cookieExpires.setTime(cookieExpires.getTime() + sessionMaxAge * 1000)
 
     const sessionCookies = sessionStore.chunk(newToken, {
-      expires: cookieExpires,
+      ...(!expireOnClose && { expires: cookieExpires }),
     })
 
     cookies.push(...sessionCookies)

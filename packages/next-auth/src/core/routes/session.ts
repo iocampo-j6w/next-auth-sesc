@@ -27,7 +27,7 @@ export default async function session(
     events,
     callbacks,
     logger,
-    session: { strategy: sessionStrategy, maxAge: sessionMaxAge },
+    session: { strategy: sessionStrategy, maxAge: sessionMaxAge, expireOnClose },
   } = options
 
   const response: ResponseInternal<Session | {}> = {
@@ -78,12 +78,12 @@ export default async function session(
       const newToken = await jwt.encode({
         ...jwt,
         token,
-        maxAge: options.session.maxAge,
+        maxAge: sessionMaxAge,
       })
 
       // Set cookie, to also update expiry date on cookie
       const sessionCookies = sessionStore.chunk(newToken, {
-        expires: newExpires,
+        ...(!expireOnClose && { expires: newExpires }),
       })
 
       response.cookies?.push(...sessionCookies)

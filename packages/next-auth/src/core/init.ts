@@ -52,7 +52,10 @@ export async function init({
     providerId,
   })
 
-  const maxAge = 30 * 24 * 60 * 60 // Sessions expire after 30 days of being idle by default
+  // Sessions expires after browser close
+  // Set this to 30 * 24 * 60 * 60 and expireOnClose to false
+  // to make it expire after 30 days of being idle
+  const maxAge = 0
 
   // User provided options are overriden by other options,
   // except for the options with special handling above
@@ -86,6 +89,7 @@ export async function init({
     session: {
       // If no adapter specified, force use of JSON Web Tokens (stateless)
       strategy: authOptions.adapter ? "database" : "jwt",
+      expireOnClose: true,
       maxAge,
       updateAge: 24 * 60 * 60,
       generateSessionToken: () => {
