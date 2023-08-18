@@ -1,16 +1,9 @@
 {
-  "name": "next-auth",
+  "name": "next-auth-sesc",
   "version": "4.10.4",
-  "description": "Authentication for Next.js",
+  "description": "Authentication for Next.js with support for session based cookie",
   "homepage": "https://next-auth.js.org",
   "repository": "https://github.com/iocampo-j6w/next-auth-sesc.git",
-  "author": "Iain Collins <me@iaincollins.com>",
-  "contributors": [
-    "Balázs Orbán <info@balazsorban.com>",
-    "Nico Domino <yo@ndo.dev>",
-    "Lluis Agusti <hi@llu.lu>",
-    "Thang Huu Vu <thvu@hey.com>"
-  ],
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
