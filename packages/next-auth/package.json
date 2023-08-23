@@ -1,7 +1,7 @@
 {
   "name": "next-auth-sesc",
-  "version": "4.10.5",
-  "description": "Authentication for Next.js with support for session based cookie",
+  "version": "4.10.6",
+  "description": "Authentication for Next.js with support for session cookie",
   "homepage": "https://next-auth.js.org",
   "repository": "https://github.com/iocampo-j6w/next-auth-sesc.git",
   "main": "index.js",
